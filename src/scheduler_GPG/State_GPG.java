@@ -30,7 +30,7 @@ public class State_GPG {
     //private ArrayList<String> availableNodes;
     private HashSet<String> nodesVisited;
     private HashSet<String> goalsCompleted;
-    
+
     private HashSet<TreeNode> candidateActions; // Nodes that have their temporal dependencies met
     private HashSet<String> blockedPlans;
     
