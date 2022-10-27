@@ -1,0 +1,9 @@
+MatchName,ForestName,AssumedPoliteness,MatchTimeMillis,P1Name,P1Score,P1IntentionsComplete,P2Name,P2Score,P2IntentionsComplete
+allied_Random_and_Random,random_0.xml,0.0,96,Random,1.0,1,Random,0.0,0
+allied_Random_and_Random,random_0.xml,0.0,43,Random,0.0,0,Random,1.0,1
+allied_Random_and_Random_GPT,random_0.xml,0.0,56,Random,1.0,1,Random_GPT,0.0,0
+allied_Random_and_Random_GPT,random_0.xml,0.0,60,Random,0.0,0,Random_GPT,1.0,1
+allied_Random_and_MCTS_fully_aware,random_0.xml,0.0,12384,Random,1.0,1,MCTS_fully_aware,1.0,0
+allied_Random_and_MCTS_fully_aware,random_0.xml,0.0,13635,Random,0.0,0,MCTS_fully_aware,1.0,1
+allied_Random_and_MCTS_partially_aware,random_0.xml,0.0,11257,Random,1.0,1,MCTS_partially_aware,1.0,0
+allied_Random_and_MCTS_partially_aware,random_0.xml,0.0,13096,Random,0.0,0,MCTS_partially_aware,1.0,1
