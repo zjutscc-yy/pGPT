@@ -1,6 +1,5 @@
 package graph;
 
-import goalplantree.TreeNode;
 import xml2bdi.XMLReader;
 
 public class MCTS_pGPT {
@@ -29,10 +28,12 @@ public class MCTS_pGPT {
                 "MCTS_Agent",
                 gpg_scheduler
         );
-        match.run_two_sided_series(true,true);
+        match.run_two_sided_series(true,false);
 
-        for (TreeNode action : gpg_scheduler.getActions()) {
-            System.out.println(action.getType());
+        for (String actionName : gpg_scheduler.getActions()) {
+            System.out.println(actionName);
         }
+
+        System.out.println(match.getAchieveGoalNum());
     }
 }

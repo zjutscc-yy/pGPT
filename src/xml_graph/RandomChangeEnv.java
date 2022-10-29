@@ -85,25 +85,24 @@ public class RandomChangeEnv {
                     if (newArr.get(j).contains("Literal") && !newArr.get(j).contains("G-")) {
                         String[] str = newArr.get(j).split("\"");
                         String envName = str[1];
-                        for (String s : absolutetEnv) {
-                            if (envName.equals(s) && m < changeNum) {
-                                //判断是否需要修改
-                                needEditFlag = rd.nextDouble() < rate;
-                                if (needEditFlag && !hasEditLineArr.contains(j)) {
-                                    m++;
-                                    hasEditLineArr.add(j);
-                                    //根据initVal把这一行分成两部分
-                                    String[] arrTemp = newArr.get(j).split("initVal");
-                                    if (arrTemp[1].contains("true")) {
-                                        arrTemp[1] = arrTemp[1].replace("true", "false");
-                                    } else {
-                                        arrTemp[1] = arrTemp[1].replace("false", "true");
-                                    }
-                                    // 上面把字符串换完了，之后把字符串写回去
-                                    newArr.set(j, arrTemp[0] + "initVal" + arrTemp[1]);
+                        if (absolutetEnv.contains(envName) && m < changeNum) {
+                            //判断是否需要修改
+                            needEditFlag = rd.nextDouble() < rate;
+                            if (needEditFlag && !hasEditLineArr.contains(j)) {
+                                m++;
+                                hasEditLineArr.add(j);
+                                //根据initVal把这一行分成两部分
+                                String[] arrTemp = newArr.get(j).split("initVal");
+                                if (arrTemp[1].contains("true")) {
+                                    arrTemp[1] = arrTemp[1].replace("true", "false");
+                                } else {
+                                    arrTemp[1] = arrTemp[1].replace("false", "true");
                                 }
+                                // 上面把字符串换完了，之后把字符串写回去
+                                newArr.set(j, arrTemp[0] + "initVal" + arrTemp[1]);
                             }
                         }
+
                     }
                 }
             }

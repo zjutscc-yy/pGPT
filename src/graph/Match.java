@@ -25,8 +25,14 @@ public class Match {
 
     private StringBuilder str;
 
+    private int achieveGoalNum;
+
+    public int getAchieveGoalNum() {
+        return achieveGoalNum;
+    }
+
     public Match(int numGoalPlanTrees, State initialState,
-                 String agent_name,Scheduler scheduler)
+                 String agent_name, Scheduler scheduler)
     {
         this.numGoalPlanTrees = numGoalPlanTrees;
         this.initialState = initialState.clone();
@@ -236,6 +242,7 @@ public class Match {
         {
             scheduler.match = null; // Free match memory in case the scheduler is still referenced in the main method
             Log.info(  "MCTS 's score = " + currentState.getStateScore(scheduler), verbose);
+            achieveGoalNum = (int) currentState.getStateScore(scheduler);
         }
         Log.info("", verbose);
 

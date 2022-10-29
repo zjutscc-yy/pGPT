@@ -10,7 +10,7 @@ public class Condition implements Comparable<Condition>, Cloneable{
     /**
      * the value of this condition
      */
-    boolean value;
+    public boolean value;
 
     public Condition(String l, boolean v){
         this.literal = l;

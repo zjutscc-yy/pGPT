@@ -8,7 +8,7 @@ import java.util.*;
 
 public class MCTS_Scheduler extends Scheduler{
 
-    private ArrayList<TreeNode> actions = new ArrayList<>();
+    private ArrayList<String> actions = new ArrayList<>();
 
     public MCTS_Node rootNode;
 
@@ -41,7 +41,7 @@ public class MCTS_Scheduler extends Scheduler{
         this.legacy = legacy;
     }
 
-    public ArrayList<TreeNode> getActions() {
+    public ArrayList<String> getActions() {
         return actions;
     }
 
@@ -139,7 +139,10 @@ public class MCTS_Scheduler extends Scheduler{
             {
                 Log.info("Action choice: " + actionChoice.getType()
                         + " (Averaged " + average + " from " + visits + " visits)");
-                actions.add(actionChoice);
+                //判断是否为动作节点
+                if(actionChoice instanceof ActionNode) {
+                    actions.add(actionChoice.getType());
+                }
             }
 
             currentNode = currentNode.children.get(selected_idx);
